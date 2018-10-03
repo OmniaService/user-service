@@ -1,6 +1,8 @@
 server:
   port: 15002
 spring:
+  profiles:
+    active: local
   output.ansi.enabled: 'ALWAYS'
   application:
     name: user-service
