@@ -11,15 +11,6 @@ public class UserEntity extends BaseEntity<UserEntity> {
     private String password;
     private String nickname;
 
-    public UserEntity() {
-    }
-
-    public UserEntity(String username, String password, String nickname) {
-        this.username = username;
-        this.password = password;
-        this.nickname = nickname;
-    }
-
     public String getUsername() {
         return username;
     }
@@ -47,7 +38,7 @@ public class UserEntity extends BaseEntity<UserEntity> {
         return this;
     }
 
-    public User convertToDTO(){
+    public User convertToDTO() {
         return new User()
                 .setNickname(getNickname())
                 .setPassword(getPassword())

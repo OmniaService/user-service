@@ -1,5 +1,6 @@
 package com.omnia.users.service;
 
+import com.omnia.users.exceptions.NotFoundException;
 import com.omnia.users.model.entities.UserEntity;
 import com.omnia.users.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ public class UserService {
     }
 
     public UserEntity findUserById(Long userId) {
-        return userRepository.findById(userId);
+        return userRepository.findById(userId).orElseThrow(() -> new NotFoundException("User with id [" + userId + "] was not found!"));
     }
 
     public void deleteById(Long userId) {

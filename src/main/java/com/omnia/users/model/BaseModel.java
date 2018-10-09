@@ -4,9 +4,6 @@ public class BaseModel<T extends BaseModel<T>> {
 
     private Long id;
 
-    public BaseModel() {
-    }
-
     public Long getId() {
         return id;
     }

@@ -8,15 +8,6 @@ public class User extends BaseModel<User> {
     private String password;
     private String nickname;
 
-    public User() {
-    }
-
-    public User(String username, String password, String nickname) {
-        this.username = username;
-        this.password = password;
-        this.nickname = nickname;
-    }
-
     public String getUsername() {
         return username;
     }
@@ -44,7 +35,7 @@ public class User extends BaseModel<User> {
         return this;
     }
 
-    public UserEntity convertToEntity(){
+    public UserEntity convertToEntity() {
         return new UserEntity()
                 .setNickname(getNickname())
                 .setPassword(getPassword())
