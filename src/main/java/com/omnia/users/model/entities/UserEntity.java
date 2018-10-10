@@ -55,4 +55,9 @@ public class UserEntity extends BaseEntity<UserEntity> {
                 .setId(getId());
     }
 
+    @Override
+    public String toString(){
+        return String.format("ID: [%s] username: [%s] password: [%s] nickname: [%s]", getId().toString(),getUsername(),getPassword(),getNickname());
+    }
+
 }

@@ -3,6 +3,7 @@ server:
 spring:
   profiles:
     active: local
+    include: useDB
   output.ansi.enabled: 'ALWAYS'
   application:
     name: user-service

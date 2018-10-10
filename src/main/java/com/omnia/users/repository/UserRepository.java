@@ -5,4 +5,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserRepository extends BaseRepository<UserEntity, Long> {
+
+    boolean existsByUsername(String username);
+
 }

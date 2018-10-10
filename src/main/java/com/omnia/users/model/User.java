@@ -51,4 +51,10 @@ public class User extends BaseModel<User> {
                 .setUsername(getUsername())
                 .setId(getId());
     }
+
+    @Override
+    public String toString(){
+        return String.format("ID: [%s] username: [%s] password: [%s] nickname: [%s]", getId() != null ? getId().toString() : "null",getUsername(),getPassword(),getNickname());
+    }
+
 }

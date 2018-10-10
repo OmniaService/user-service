@@ -1,6 +1,6 @@
 package com.omnia.users.model;
 
-public class BaseModel<T extends BaseModel<T>> {
+public abstract class BaseModel<T extends BaseModel<T>> {
 
     private Long id;
 
@@ -16,4 +16,6 @@ public class BaseModel<T extends BaseModel<T>> {
         this.id = id;
         return (T) this;
     }
+
+    public abstract String toString();
 }

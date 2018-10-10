@@ -25,4 +25,7 @@ public abstract class BaseEntity<T extends BaseEntity<T>> {
         this.id = id;
         return (T) this;
     }
+
+    public abstract String toString();
+
 }
