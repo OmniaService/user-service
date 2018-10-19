@@ -1,7 +1,6 @@
 package com.omnia.users.util;
 
 import com.omnia.users.exceptions.IncorrectValuesEntered;
-import com.omnia.users.model.User;
 import com.omnia.users.model.entities.UserEntity;
 
 public class Validator {
