@@ -7,14 +7,16 @@ public class User extends BaseModel<User> {
     private String username;
     private String password;
     private String nickname;
+    private String role;
 
     public User() {
     }
 
-    public User(String username, String password, String nickname) {
+    public User(String username, String password, String nickname, String role) {
         this.username = username;
         this.password = password;
         this.nickname = nickname;
+        this.role = role;
     }
 
     public String getUsername() {
@@ -44,11 +46,21 @@ public class User extends BaseModel<User> {
         return this;
     }
 
+    public String getRole() {
+        return role;
+    }
+
+    public User setRole(String role) {
+        this.role = role;
+        return this;
+    }
+
     public UserEntity convertToEntity(){
         return new UserEntity()
                 .setNickname(getNickname())
                 .setPassword(getPassword())
                 .setUsername(getUsername())
+                .setRole(getRole())
                 .setId(getId());
     }
 

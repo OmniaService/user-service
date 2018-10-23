@@ -10,14 +10,16 @@ public class UserEntity extends BaseEntity<UserEntity> {
     private String username;
     private String password;
     private String nickname;
+    private String role;
 
     public UserEntity() {
     }
 
-    public UserEntity(String username, String password, String nickname) {
+    public UserEntity(String username, String password, String nickname, String role) {
         this.username = username;
         this.password = password;
         this.nickname = nickname;
+        this.role = role;
     }
 
     public String getUsername() {
@@ -47,11 +49,21 @@ public class UserEntity extends BaseEntity<UserEntity> {
         return this;
     }
 
+    public String getRole() {
+        return role;
+    }
+
+    public UserEntity setRole(String role) {
+        this.role = role;
+        return this;
+    }
+
     public User convertToDTO(){
         return new User()
                 .setNickname(getNickname())
                 .setPassword(getPassword())
                 .setUsername(getUsername())
+                .setRole(getRole())
                 .setId(getId());
     }
 
