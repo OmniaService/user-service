@@ -6,6 +6,7 @@ import com.omnia.users.model.entities.UserEntity;
 import com.omnia.users.repository.UserRepository;
 import com.omnia.users.util.Validator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -16,9 +17,13 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private BCryptPasswordEncoder encoder;
+
     public UserEntity saveUser(UserEntity user) {
         Validator.validateUser(user);
         if (!userRepository.existsByUsername(user.getUsername())) {
+            user.setPassword(encoder.encode(user.getPassword()));
             return userRepository.save(user);
         } else {
             throw new AlreadyExistsException("User with username: " + user.getUsername() + " already taken!");

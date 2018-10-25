@@ -3,8 +3,10 @@ package com.omnia.users.model.entities;
 import com.omnia.users.model.User;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "users")
 public class UserEntity extends BaseEntity<UserEntity> {
 
     private String username;
